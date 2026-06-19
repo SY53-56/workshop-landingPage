@@ -9,7 +9,7 @@ const cors = require("cors")
 
 
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: "https://workshop-landing-page-s2uw.vercel.app/"
 }));
 
 app.use(express.json())
