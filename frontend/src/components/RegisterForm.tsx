@@ -28,7 +28,7 @@ export default function RegisterForm() {
         form
       );
 
-      console.log(res.data);
+    
 
       setForm({
         name: "",
@@ -37,6 +37,7 @@ export default function RegisterForm() {
       });
 
       alert("It worked!");
+       return res.data
     } catch (err) {
       console.error(err);
     }

@@ -11,6 +11,7 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute   inset-0   w-full h-full object-cover"
       >
         <source src="/robotic-video.mp4" type="video/mp4" />
