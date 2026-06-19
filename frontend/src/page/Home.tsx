@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+
 import Hero from '../components/Hero'
 import Workshop from '../components/Workshop'
 import OutComelearning from '../components/OutComelearning'
