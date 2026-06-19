@@ -4,7 +4,7 @@ import {workshopStats,learningGoals} from "../data/workShopDetailData"
 
 export default function Workshop() {
   return (
-    <section id="details" className="relative overflow-hidden py-24 px-6 bg-slate-50 text-slate-900">
+    <section id="workshop" className="relative overflow-hidden py-24 px-6 bg-slate-50 text-slate-900">
       <div className="pointer-events-none absolute -left-24 top-8 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-32 h-80 w-80 rounded-full bg-violet-500/15 blur-3xl" />
       <div className="max-w-6xl mx-auto">

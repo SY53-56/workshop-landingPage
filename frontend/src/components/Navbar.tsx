@@ -14,14 +14,14 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <div className="gap-5 hidden lg:flex">
-        <a href="#details">Details</a>
-        <a href="#details">Workshop</a>
-        <a href="#outcomes">Outcomes</a>
-        <a href="#faq">FAQ</a>
+        <a href="#details" className="cursor-pointer">Details</a>
+        <a href="#workshop" className="cursor-pointer">Workshop</a>
+        <a href="#outcomes"className="cursor-pointer">Outcomes</a>
+        <a href="#faq"className="cursor-pointer">FAQ</a>
       </div>
 
       <div className="hidden lg:flex">
-        <a href="#register" className="px-4 py-2 border-0 bg-slate-950 rounded-lg text-white">Enroll Now</a>
+        <a  className="px-4 py-2 border-0 bg-white rounded-lg cursor-pointer text-text-black">Enroll Now</a>
       </div>
 
       {/* Mobile Toggle */}

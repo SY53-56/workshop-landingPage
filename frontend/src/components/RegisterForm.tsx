@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Input from './ui/Input'
 import Button from './ui/Button'
-
+import axios from "axios"
 type form ={
     name:string,
     email:string,
@@ -13,6 +13,28 @@ export default function RegisterForm() {
     email:"",
     phone:""
     })
+
+   const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await axios.post(
+      "http://localhost:3000/contact/enqury",
+      form
+    );
+
+    console.log(res.data);
+    setForm({
+      name:"",
+    email:"",
+    phone:""
+    })
+    alert("it work")
+  } catch (err) {
+    console.log(err)
+    console.error(err);
+  }
+};
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
         const {name, value}=e.target
@@ -35,7 +57,7 @@ export default function RegisterForm() {
       </p>
     </div>
 
-    <form
+    <form onSubmit={handleForm}
       className="
         max-w-xl
         mx-auto
@@ -110,7 +132,7 @@ export default function RegisterForm() {
         "
       />
 
-      <Button
+      <Button type='submit'
         className="
           mt-2
           bg-blue-600
