@@ -1,50 +1,64 @@
-import React, { useState } from 'react'
-import Input from './ui/Input'
-import Button from './ui/Button'
-import axios from "axios"
-type form ={
-    name:string,
-    email:string,
-    phone:string
-}
-export default function RegisterForm() {
-    const [form,setForm]= useState<form>({
-        name:"",
-    email:"",
-    phone:""
-    })
 
-   const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+import React, { useState } from "react";
+import Input from "./ui/Input";
+import Button from "./ui/Button";
+import axios from "axios";
 
-  try {
-    const res = await axios.post(
-      "http://localhost:3000/contact/enqury",
-      form
-    );
-
-    console.log(res.data);
-    setForm({
-      name:"",
-    email:"",
-    phone:""
-    })
-    alert("it work")
-  } catch (err) {
-    console.log(err)
-    console.error(err);
-  }
+type Form = {
+  name: string;
+  email: string;
+  phone: string;
 };
-    
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
-        const {name, value}=e.target
-        setForm(prev=> ({...prev ,[name]:value}))
+
+export default function RegisterForm() {
+  const [form, setForm] = useState<Form>({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleForm = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(
+        "https://workshop-landingpage-1.onrender.com/contact/enqury",
+        form
+      );
+
+      console.log(res.data);
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+      });
+
+      alert("It worked!");
+    } catch (err) {
+      console.error(err);
     }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <section
-  id="register"
-  className="py-20 bg-slate-50"
->
+      id="register"
+      className="py-20 bg-slate-50"
+    >
+     
   <div className="max-w-4xl mx-auto px-6">
     <div className="text-center mb-10">
       <h2 className="text-4xl font-bold text-slate-900">
@@ -148,7 +162,6 @@ export default function RegisterForm() {
       </Button>
     </form>
   </div>
-</section>
-  )
+    </section>
+  );
 }
-
