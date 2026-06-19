@@ -24,7 +24,7 @@ export default function RegisterForm() {
 
     try {
       const res = await axios.post(
-        "https://workshop-landingpage-1.onrender.com/contact/enqury",
+        "https://workshop-landingpage-1.onrender.com/contact/enquiry",
         form
       );
 
