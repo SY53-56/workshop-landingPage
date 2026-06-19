@@ -26,7 +26,7 @@ export default function Hero() {
           <p className="mt-4 text-2xl">
             Build robots, learn AI and create projects. 
           </p>
-          <Button className="bg-transparent border-2 px-4 py-2 mt-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300 cursor-pointer" children="enroll now"/>
+          <Button  onClick={() => console.log("clicked")} className="bg-transparent border-2 px-4 py-2 mt-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300 cursor-pointer" children="enroll now"/>
         </div>
       </div>
     </section>
